@@ -7,30 +7,73 @@
 
 import UIKit
 
+import SwiftUI
+
+struct ContentView: View {
+    @State private var sideA = ""
+    @State private var sideB = ""
+    @State private var sideC = ""
+    @State private var triangleType = ""
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Введите длины сторон треугольника")
+                .font(.headline)
+            
+            TextField("Сторона A", text: $sideA)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+            
+            TextField("Сторона B", text: $sideB)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+            
+            TextField("Сторона C", text: $sideC)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
+            
+            Button("Проверить") {
+                checkTriangleType()
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            
+            Text(triangleType)
+                .font(.title)
+                .foregroundColor(.green)
+                .padding(.top, 20)
+        }
+        .padding()
+    }
+
+    func checkTriangleType() {
+        guard let a = Int(sideA), let b = Int(sideB), let c = Int(sideC) else {
+            triangleType = "Пожалуйста, введите все три стороны"
+            return
+        }
+
+        if a + b > c && a + c > b && b + c > a {
+            if a == b && b == c {
+                triangleType = "Равносторонний треугольник"
+            } else if a == b || a == c || b == c {
+                triangleType = "Равнобедренный треугольник"
+            } else {
+                triangleType = "Разносторонний треугольник"
+            }
+        } else {
+            triangleType = "Треугольник с такими сторонами не существует"
+        }
+    }
+}
+
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+struct TriangleApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 

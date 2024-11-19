@@ -24,9 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		698071DD2CE364B500E8BA04 /* triangles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = triangles.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		698071F32CE364B700E8BA04 /* trianglesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trianglesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		698071FD2CE364B700E8BA04 /* trianglesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trianglesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		698071DD2CE364B500E8BA04 /* triangles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = triangles.app; path = "/Users/theputin/Documents/triangles/build/Debug-iphoneos/triangles.app"; sourceTree = "<absolute>"; };
+		698071F32CE364B700E8BA04 /* trianglesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = trianglesTests.xctest; path = "/Users/theputin/Documents/triangles/build/Debug-iphoneos/triangles.app/PlugIns/trianglesTests.xctest"; sourceTree = "<absolute>"; };
+		698071FD2CE364B700E8BA04 /* trianglesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = trianglesUITests.xctest; path = "/Users/theputin/Documents/triangles/build/Debug-iphoneos/trianglesUITests-Runner.app/PlugIns/trianglesUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -91,18 +91,7 @@
 				698071DF2CE364B500E8BA04 /* triangles */,
 				698071F62CE364B700E8BA04 /* trianglesTests */,
 				698072002CE364B700E8BA04 /* trianglesUITests */,
-				698071DE2CE364B500E8BA04 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		698071DE2CE364B500E8BA04 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				698071DD2CE364B500E8BA04 /* triangles.app */,
-				698071F32CE364B700E8BA04 /* trianglesTests.xctest */,
-				698071FD2CE364B700E8BA04 /* trianglesUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +198,7 @@
 			mainGroup = 698071D42CE364B400E8BA04;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 698071DE2CE364B500E8BA04 /* Products */;
+			productRefGroup = 698071D42CE364B400E8BA04;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
